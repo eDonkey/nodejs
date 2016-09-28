@@ -13,6 +13,16 @@ var express = require('express')
 		    } catch (e) {
 			        next(e)
 		    }
+				console.log('entering home');
+	  })
+	  app.get('/contact', function (req, res, next) {
+		    try {
+			        var html = template({ title: 'Contact' })
+		      res.send(html)
+		    } catch (e) {
+			        next(e)
+		    }
+				console.log('entering contact');
 	  })
 
 app.listen(process.env.PORT || 3000, function () {
